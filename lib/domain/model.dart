@@ -18,15 +18,15 @@ class SliderObject {
 // }
 
 class StudentInfo {
-  int sid;
+  int studentId;
   String fullName;
   String emailAddress;
-  String phone;
+  String phoneNumber;
   String address;
   String gender;
 
-  StudentInfo(this.sid, this.fullName, this.emailAddress, this.phone,
-      this.address, this.gender);
+  StudentInfo(this.studentId, this.fullName, this.emailAddress,
+      this.phoneNumber, this.address, this.gender);
 }
 
 class StudentCreds {
@@ -40,8 +40,8 @@ class StudentCreds {
 
 class Librarian {
   int librarianId;
-  int userName;
-  int password;
+  String userName;
+  String password;
 
   Librarian(this.librarianId, this.userName, this.password);
 }
@@ -49,32 +49,32 @@ class Librarian {
 class AllBooks {
   int bookId;
   String bookName;
-  String author;
+  String authorName;
   String publication;
-  String numOfBooksInLibrary;
+  int numOfCopies;
 
-  AllBooks(this.bookId, this.bookName, this.author, this.publication,
-      this.numOfBooksInLibrary);
+  AllBooks(this.bookId, this.bookName, this.authorName, this.publication,
+      this.numOfCopies);
 }
 
-class AllBookCopies {
+class BookAllCopies {
   int bookCopyId;
   int bookId;
   String bookName;
-  String author;
+  String authorName;
   int bookCopyIdCode;
   String createdOn;
   String updatedOn;
 
-  AllBookCopies(this.bookCopyId, this.bookId, this.bookName, this.author,
+  BookAllCopies(this.bookCopyId, this.bookId, this.bookName, this.authorName,
       this.bookCopyIdCode, this.createdOn, this.updatedOn);
 }
 
 class BookIssuedByParticularStudent {
   int issueId;
-  int studentName;
-  int bookName;
-  int bookCopyIdCode;
+  String studentName;
+  String bookName;
+  String bookCopyIdCode;
   String issuedOn;
   String returnDate;
 

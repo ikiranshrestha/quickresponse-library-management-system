@@ -10,7 +10,7 @@ class BaseResponse {
 }
 
 @JsonSerializable()
-class StudentCred {
+class StudentCredResponse {
   @JsonKey(name: "sid")
   int? studentId;
   @JsonKey(name: "full_name")
@@ -20,17 +20,18 @@ class StudentCred {
   @JsonKey(name: "password")
   String? password;
 
-  StudentCred(this.studentId, this.fullName, this.emailAddress, this.password);
+  StudentCredResponse(
+      this.studentId, this.fullName, this.emailAddress, this.password);
 
   //from json
-  factory StudentCred.fromJson(Map<String, dynamic> json) =>
+  factory StudentCredResponse.fromJson(Map<String, dynamic> json) =>
       _$StudentCredFromJson(json);
   //to json
   Map<String, dynamic> toJson() => _$StudentCredToJson(this);
 }
 
 @JsonSerializable()
-class StudentInfo {
+class StudentInfoResponse {
   @JsonKey(name: "sid")
   int? studentId;
   @JsonKey(name: "full_name")
@@ -38,42 +39,42 @@ class StudentInfo {
   @JsonKey(name: "email_address")
   String? emailAddress;
   @JsonKey(name: "phone")
+  String? address;
+  @JsonKey(name: "address")
   String? phoneNumber;
   @JsonKey(name: "gender")
   String? gender;
 
-  StudentInfo(this.studentId, this.fullName, this.emailAddress,
-      this.phoneNumber, this.gender);
+  StudentInfoResponse(this.studentId, this.fullName, this.emailAddress,
+      this.phoneNumber, this.address, this.gender);
 
   //from json
-  factory StudentInfo.fromJson(Map<String, dynamic> json) =>
+  factory StudentInfoResponse.fromJson(Map<String, dynamic> json) =>
       _$StudentInfoFromJson(json);
   //to json
   Map<String, dynamic> toJson() => _$StudentInfoToJson(this);
 }
 
 @JsonSerializable()
-class Librarian {
+class LibrarianResponse {
   @JsonKey(name: "id")
-  int? id;
-  @JsonKey(name: "full_name")
-  String? fullName;
-  @JsonKey(name: "email_address")
-  String? emailAddress;
+  int? librarianId;
+  @JsonKey(name: "user_name")
+  String? userName;
   @JsonKey(name: "password")
   String? password;
 
-  Librarian(this.id, this.fullName, this.emailAddress, this.password);
+  LibrarianResponse(this.librarianId, this.userName, this.password);
 
   //from json
-  factory Librarian.fromJson(Map<String, dynamic> json) =>
+  factory LibrarianResponse.fromJson(Map<String, dynamic> json) =>
       _$LibrarianFromJson(json);
   //to json
   Map<String, dynamic> toJson() => _$LibrarianToJson(this);
 }
 
 @JsonSerializable()
-class BooksIssuedByStudent {
+class BooksIssuedByStudentResponse {
   // /http://localhost/Sumitra/lms/lms/apis/select-issues-books-by-student-name.php?sid=14
   @JsonKey(name: "issue_id")
   int? issueId;
@@ -82,17 +83,17 @@ class BooksIssuedByStudent {
   @JsonKey(name: "book_name")
   String? bookName;
   @JsonKey(name: "book_copy_code")
-  String? bookCopyCode;
+  String? bookCopyIdCode;
   @JsonKey(name: "issue_date")
-  String? issueDate;
+  String? issuedOn;
   @JsonKey(name: "return_date")
   String? returnDate;
 
-  BooksIssuedByStudent(this.issueId, this.studentName, this.bookName,
-      this.bookCopyCode, this.issueDate, this.returnDate);
+  BooksIssuedByStudentResponse(this.issueId, this.studentName, this.bookName,
+      this.bookCopyIdCode, this.issuedOn, this.returnDate);
 
   //from json
-  factory BooksIssuedByStudent.fromJson(Map<String, dynamic> json) =>
+  factory BooksIssuedByStudentResponse.fromJson(Map<String, dynamic> json) =>
       _$BooksIssuedByStudentFromJson(json);
   //to json
   Map<String, dynamic> toJson() => _$BooksIssuedByStudentToJson(this);
@@ -102,9 +103,9 @@ class BooksIssuedByStudent {
 }
 
 @JsonSerializable()
-class BookAll {
+class BookAllResponse {
   @JsonKey(name: "book_id")
-  String? bookId;
+  int? bookId;
   @JsonKey(name: "book_name")
   String? bookName;
   @JsonKey(name: "author")
@@ -112,38 +113,40 @@ class BookAll {
   @JsonKey(name: "publication")
   String? publication;
   @JsonKey(name: "no_of_copies")
-  String? numOfCopies;
+  int? numOfCopies;
 
-  BookAll(this.bookId, this.bookName, this.authorName, this.publication,
+  BookAllResponse(this.bookId, this.bookName, this.authorName, this.publication,
       this.numOfCopies);
 
   //from json
-  factory BookAll.fromJson(Map<String, dynamic> json) =>
+  factory BookAllResponse.fromJson(Map<String, dynamic> json) =>
       _$BookAllFromJson(json);
   //to json
   Map<String, dynamic> toJson() => _$BookAllToJson(this);
 }
 
 @JsonSerializable()
-class BookAllCopies {
+class BookAllCopiesResponse {
   @JsonKey(name: "bcid")
   int? bookCopyId;
   @JsonKey(name: "book_id")
-  String? bookId;
+  int? bookId;
   @JsonKey(name: "book_name")
   String? bookName;
+  @JsonKey(name: "author_name")
+  String? authorName;
   @JsonKey(name: "bcid_no")
-  String? bookCopyIdKey;
+  int? bookCopyIdCode;
   @JsonKey(name: "created_on")
   String? createdOn;
   @JsonKey(name: "updated_on")
   String? updatedOn;
 
-  BookAllCopies(this.bookCopyId, this.bookId, this.bookName, this.bookCopyIdKey,
-      this.createdOn, this.updatedOn);
+  BookAllCopiesResponse(this.bookCopyId, this.bookId, this.bookName,
+      this.authorName, this.bookCopyIdCode, this.createdOn, this.updatedOn);
 
   //from json
-  factory BookAllCopies.fromJson(Map<String, dynamic> json) =>
+  factory BookAllCopiesResponse.fromJson(Map<String, dynamic> json) =>
       _$BookAllCopiesFromJson(json);
   //to json
   Map<String, dynamic> toJson() => _$BookAllCopiesToJson(this);

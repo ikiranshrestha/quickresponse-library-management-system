@@ -31,7 +31,7 @@ Map<String, dynamic> _$StudentCredToJson(StudentCred instance) =>
       'password': instance.password,
     };
 
-StudentInfo _$StudentInfoFromJson(Map<String, dynamic> json) => StudentInfo(
+StudentInfoResponse _$StudentInfoFromJson(Map<String, dynamic> json) => StudentInfoResponse(
       json['sid'] as int?,
       json['full_name'] as String?,
       json['email_address'] as String?,
@@ -39,7 +39,7 @@ StudentInfo _$StudentInfoFromJson(Map<String, dynamic> json) => StudentInfo(
       json['gender'] as String?,
     );
 
-Map<String, dynamic> _$StudentInfoToJson(StudentInfo instance) =>
+Map<String, dynamic> _$StudentInfoToJson(StudentInfoResponse instance) =>
     <String, dynamic>{
       'sid': instance.studentId,
       'full_name': instance.fullName,
@@ -48,23 +48,23 @@ Map<String, dynamic> _$StudentInfoToJson(StudentInfo instance) =>
       'gender': instance.gender,
     };
 
-Librarian _$LibrarianFromJson(Map<String, dynamic> json) => Librarian(
+LibrarianResponse _$LibrarianFromJson(Map<String, dynamic> json) => LibrarianResponse(
       json['id'] as int?,
       json['full_name'] as String?,
       json['email_address'] as String?,
       json['password'] as String?,
     );
 
-Map<String, dynamic> _$LibrarianToJson(Librarian instance) => <String, dynamic>{
+Map<String, dynamic> _$LibrarianToJson(LibrarianResponse instance) => <String, dynamic>{
       'id': instance.id,
       'full_name': instance.fullName,
       'email_address': instance.emailAddress,
       'password': instance.password,
     };
 
-BooksIssuedByStudent _$BooksIssuedByStudentFromJson(
+BooksIssuedByStudentResponse _$BooksIssuedByStudentFromJson(
         Map<String, dynamic> json) =>
-    BooksIssuedByStudent(
+    BooksIssuedByStudentResponse(
       json['issue_id'] as int?,
       json['student_name'] as String?,
       json['book_name'] as String?,
@@ -74,7 +74,7 @@ BooksIssuedByStudent _$BooksIssuedByStudentFromJson(
     );
 
 Map<String, dynamic> _$BooksIssuedByStudentToJson(
-        BooksIssuedByStudent instance) =>
+        BooksIssuedByStudentResponse instance) =>
     <String, dynamic>{
       'issue_id': instance.issueId,
       'student_name': instance.studentName,
@@ -84,7 +84,7 @@ Map<String, dynamic> _$BooksIssuedByStudentToJson(
       'return_date': instance.returnDate,
     };
 
-BookAll _$BookAllFromJson(Map<String, dynamic> json) => BookAll(
+BookAllResponse _$BookAllFromJson(Map<String, dynamic> json) => BookAllResponse(
       json['book_id'] as String?,
       json['book_name'] as String?,
       json['author'] as String?,
@@ -92,7 +92,7 @@ BookAll _$BookAllFromJson(Map<String, dynamic> json) => BookAll(
       json['no_of_copies'] as String?,
     );
 
-Map<String, dynamic> _$BookAllToJson(BookAll instance) => <String, dynamic>{
+Map<String, dynamic> _$BookAllToJson(BookAllResponse instance) => <String, dynamic>{
       'book_id': instance.bookId,
       'book_name': instance.bookName,
       'author': instance.authorName,
@@ -100,8 +100,8 @@ Map<String, dynamic> _$BookAllToJson(BookAll instance) => <String, dynamic>{
       'no_of_copies': instance.numOfCopies,
     };
 
-BookAllCopies _$BookAllCopiesFromJson(Map<String, dynamic> json) =>
-    BookAllCopies(
+BookAllCopiesResponse _$BookAllCopiesFromJson(Map<String, dynamic> json) =>
+    BookAllCopiesResponse(
       json['bcid'] as int?,
       json['book_id'] as String?,
       json['book_name'] as String?,
@@ -110,7 +110,7 @@ BookAllCopies _$BookAllCopiesFromJson(Map<String, dynamic> json) =>
       json['updated_on'] as String?,
     );
 
-Map<String, dynamic> _$BookAllCopiesToJson(BookAllCopies instance) =>
+Map<String, dynamic> _$BookAllCopiesToJson(BookAllCopiesResponse instance) =>
     <String, dynamic>{
       'bcid': instance.bookCopyId,
       'book_id': instance.bookId,
