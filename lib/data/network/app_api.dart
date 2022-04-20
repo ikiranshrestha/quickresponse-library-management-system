@@ -10,5 +10,10 @@ abstract class AppServiceClient {
   factory AppServiceClient(Dio dio, {String baseUrl}) = _AppServiceClient;
 
   @POST("select-all-student-creds.php?sid=23")
-  Future<StudentCredResponse> login();
+  Future<StudentCredResponse> studentLogin(
+    @Field("student_id") int studentId,
+    @Field("full_name") String fullName,
+    @Field("email_address") String emailAddress,
+    @Field("password") String password,
+  );
 }

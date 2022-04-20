@@ -25,9 +25,9 @@ class StudentCredResponse {
 
   //from json
   factory StudentCredResponse.fromJson(Map<String, dynamic> json) =>
-      _$StudentCredFromJson(json);
+      _$StudentCredResponseFromJson(json);
   //to json
-  Map<String, dynamic> toJson() => _$StudentCredToJson(this);
+  Map<String, dynamic> toJson() => _$StudentCredResponseToJson(this);
 }
 
 @JsonSerializable()
@@ -50,9 +50,9 @@ class StudentInfoResponse {
 
   //from json
   factory StudentInfoResponse.fromJson(Map<String, dynamic> json) =>
-      _$StudentInfoFromJson(json);
+      _$StudentInfoResponseFromJson(json);
   //to json
-  Map<String, dynamic> toJson() => _$StudentInfoToJson(this);
+  Map<String, dynamic> toJson() => _$StudentInfoResponseToJson(this);
 }
 
 @JsonSerializable()
@@ -68,9 +68,9 @@ class LibrarianResponse {
 
   //from json
   factory LibrarianResponse.fromJson(Map<String, dynamic> json) =>
-      _$LibrarianFromJson(json);
+      _$LibrarianResponseFromJson(json);
   //to json
-  Map<String, dynamic> toJson() => _$LibrarianToJson(this);
+  Map<String, dynamic> toJson() => _$LibrarianResponseToJson(this);
 }
 
 @JsonSerializable()
@@ -94,9 +94,9 @@ class BooksIssuedByStudentResponse {
 
   //from json
   factory BooksIssuedByStudentResponse.fromJson(Map<String, dynamic> json) =>
-      _$BooksIssuedByStudentFromJson(json);
+      _$BooksIssuedByStudentResponseFromJson(json);
   //to json
-  Map<String, dynamic> toJson() => _$BooksIssuedByStudentToJson(this);
+  Map<String, dynamic> toJson() => _$BooksIssuedByStudentResponseToJson(this);
 
   // factory BooksIssuedByStudent.fromJson(Map<String, dynamic> json) =>
   //     _$BooksIssuedByStudentFromJson(json);
@@ -120,9 +120,9 @@ class BookAllResponse {
 
   //from json
   factory BookAllResponse.fromJson(Map<String, dynamic> json) =>
-      _$BookAllFromJson(json);
+      _$BookAllResponseFromJson(json);
   //to json
-  Map<String, dynamic> toJson() => _$BookAllToJson(this);
+  Map<String, dynamic> toJson() => _$BookAllResponseToJson(this);
 }
 
 @JsonSerializable()
@@ -147,7 +147,7 @@ class BookAllCopiesResponse {
 
   //from json
   factory BookAllCopiesResponse.fromJson(Map<String, dynamic> json) =>
-      _$BookAllCopiesFromJson(json);
+      _$BookAllCopiesResponseFromJson(json);
   //to json
-  Map<String, dynamic> toJson() => _$BookAllCopiesToJson(this);
+  Map<String, dynamic> toJson() => _$BookAllCopiesResponseToJson(this);
 }
