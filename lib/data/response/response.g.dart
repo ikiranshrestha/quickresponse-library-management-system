@@ -16,14 +16,15 @@ Map<String, dynamic> _$BaseResponseToJson(BaseResponse instance) =>
       'message': instance.message,
     };
 
-StudentCred _$StudentCredFromJson(Map<String, dynamic> json) => StudentCred(
+StudentCredResponse _$StudentCredFromJson(Map<String, dynamic> json) =>
+    StudentCredResponse(
       json['sid'] as int?,
       json['full_name'] as String?,
       json['email_address'] as String?,
       json['password'] as String?,
     );
 
-Map<String, dynamic> _$StudentCredToJson(StudentCred instance) =>
+Map<String, dynamic> _$StudentCredToJson(StudentCredResponse instance) =>
     <String, dynamic>{
       'sid': instance.studentId,
       'full_name': instance.fullName,
@@ -31,11 +32,13 @@ Map<String, dynamic> _$StudentCredToJson(StudentCred instance) =>
       'password': instance.password,
     };
 
-StudentInfoResponse _$StudentInfoFromJson(Map<String, dynamic> json) => StudentInfoResponse(
+StudentInfoResponse _$StudentInfoFromJson(Map<String, dynamic> json) =>
+    StudentInfoResponse(
       json['sid'] as int?,
       json['full_name'] as String?,
       json['email_address'] as String?,
       json['phone'] as String?,
+      json['adddress'] as String?,
       json['gender'] as String?,
     );
 
@@ -48,17 +51,17 @@ Map<String, dynamic> _$StudentInfoToJson(StudentInfoResponse instance) =>
       'gender': instance.gender,
     };
 
-LibrarianResponse _$LibrarianFromJson(Map<String, dynamic> json) => LibrarianResponse(
+LibrarianResponse _$LibrarianFromJson(Map<String, dynamic> json) =>
+    LibrarianResponse(
       json['id'] as int?,
       json['full_name'] as String?,
-      json['email_address'] as String?,
       json['password'] as String?,
     );
 
-Map<String, dynamic> _$LibrarianToJson(LibrarianResponse instance) => <String, dynamic>{
-      'id': instance.id,
-      'full_name': instance.fullName,
-      'email_address': instance.emailAddress,
+Map<String, dynamic> _$LibrarianToJson(LibrarianResponse instance) =>
+    <String, dynamic>{
+      'id': instance.librarianId,
+      'full_name': instance.userName,
       'password': instance.password,
     };
 
@@ -79,20 +82,21 @@ Map<String, dynamic> _$BooksIssuedByStudentToJson(
       'issue_id': instance.issueId,
       'student_name': instance.studentName,
       'book_name': instance.bookName,
-      'book_copy_code': instance.bookCopyCode,
-      'issue_date': instance.issueDate,
+      'book_copy_code': instance.bookCopyIdCode,
+      'issue_date': instance.issuedOn,
       'return_date': instance.returnDate,
     };
 
 BookAllResponse _$BookAllFromJson(Map<String, dynamic> json) => BookAllResponse(
-      json['book_id'] as String?,
+      json['book_id'] as int?,
       json['book_name'] as String?,
       json['author'] as String?,
       json['publication'] as String?,
-      json['no_of_copies'] as String?,
+      json['no_of_copies'] as int?,
     );
 
-Map<String, dynamic> _$BookAllToJson(BookAllResponse instance) => <String, dynamic>{
+Map<String, dynamic> _$BookAllToJson(BookAllResponse instance) =>
+    <String, dynamic>{
       'book_id': instance.bookId,
       'book_name': instance.bookName,
       'author': instance.authorName,
@@ -103,9 +107,10 @@ Map<String, dynamic> _$BookAllToJson(BookAllResponse instance) => <String, dynam
 BookAllCopiesResponse _$BookAllCopiesFromJson(Map<String, dynamic> json) =>
     BookAllCopiesResponse(
       json['bcid'] as int?,
-      json['book_id'] as String?,
+      json['book_id'] as int?,
       json['book_name'] as String?,
-      json['bcid_no'] as String?,
+      json['author_name'] as String?,
+      json['bcid_no'] as int?,
       json['created_on'] as String?,
       json['updated_on'] as String?,
     );
@@ -115,7 +120,7 @@ Map<String, dynamic> _$BookAllCopiesToJson(BookAllCopiesResponse instance) =>
       'bcid': instance.bookCopyId,
       'book_id': instance.bookId,
       'book_name': instance.bookName,
-      'bcid_no': instance.bookCopyIdKey,
+      'bcid_no': instance.bookCopyIdCode,
       'created_on': instance.createdOn,
       'updated_on': instance.updatedOn,
     };
